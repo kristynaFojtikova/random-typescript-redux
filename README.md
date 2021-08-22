@@ -16,3 +16,7 @@ Typescript, redux simple app that generates random numbers.
 
 4. navigate to `ios` folder and run `pod install`
 5. run `yarn ios`
+
+## To test:
+
+run `yarn test`
