@@ -11,7 +11,8 @@ describe('Random numbers - update state', () => {
       type: RandomNumbersActionType.UPDATE,
       payload: snapshot,
     };
-    expect(randomNumbersReducer(undefined, action)).toEqual({
+    const state = randomNumbersReducer(undefined, action);
+    expect(state).toEqual({
       currentDigits: snapshot,
     });
     const snapshot2 = generateRandomNumbersSnapshot();
@@ -19,7 +20,7 @@ describe('Random numbers - update state', () => {
       type: RandomNumbersActionType.UPDATE,
       payload: snapshot2,
     };
-    expect(randomNumbersReducer(undefined, action2)).toEqual({
+    expect(randomNumbersReducer(state, action2)).toEqual({
       currentDigits: snapshot2,
     });
   });
